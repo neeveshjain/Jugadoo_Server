@@ -1,0 +1,123 @@
+@media screen and (min-width: 600px) {
+    .logo {
+        width: 175px;
+        height: 150.2px;
+    }
+}
+.logo{
+    width: 30%;
+    height: auto;
+    mix-blend-mode: darken;
+    padding-left: 7%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+footer {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 38.19px;
+    text-align: left;
+}
+footer a {
+    color: black;
+}
+
+
+.link-columns > div:first-child {
+    margin-left: 10%;
+}
+.link-columns > div:last-child {
+    margin-left: 150px !important;
+    margin-right: 0;
+}
+.footer{
+    display: flex; 
+    align-items: center;
+    margin-right: 0;
+}
+
+
+.background-image{
+    background-image: url('../assets/images/footer_background.png');
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.link-columns {
+    display: flex;
+    justify-content: space-between;
+}
+.subscribe input[type="email"] {
+    width: 150%;
+    line-height: 2.5;
+    outline: none;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 3px solid #FF9900;
+    border-radius: 13px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 5px #888888;
+}
+
+
+button[type="submit"] {
+    background-color: white;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 11px;
+    border: 0;
+    padding: 10px 20px;
+    font-weight: 549;
+    font-size: medium;
+    position: absolute;
+    transform: translate();
+    width: auto;
+    height: 36px;
+    font-size: 15px;
+    right: 100px;
+    /* border: 1px solid #FF9900; */
+    font-weight: 500;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffae34;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="email"]::placeholder {
+    color: #b8b3b3; 
+    font-size: 1em; 
+    text-align: left !important;
+}
+.link-columns > div {
+    display: flex;
+    flex-direction: column;
+}
+.link-columns > div:last-child {
+    margin-left: 400px;
+}
+
+.PoweredBy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #FEF6C8;
+    height: 50px;
+}
+
+.subtext {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.right {
+    margin-left: 25%;
+}

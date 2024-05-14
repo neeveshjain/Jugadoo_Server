@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jugado</title>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css"> 
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+</head>
+<body>
+  <nav>
+    <div>
+    <h1><a href="#"><img src="../../assets/images/about/logo.png" alt="logo"></a></h1>
+  </div>
+    
+    <ul>
+         <li><a href="../main/home.html">Home</a></li>
+         <li><a href="../main/About.html">About</a></li>
+         <li><a href="../main/Pricing.html">Pricing</a></li>
+         <li><a href="../main/FAQ.html">Help</a></li>
+       <li>  <a href="#" class="profile-link">
+          <h6><img src='../../assets/images/profile.svg' alt='User'></h6>
+        </a>
+    
+      </ul>
+    
+</nav>
+  <body>
+    
+
+    <div class="input-with-arrow">
+      <textarea id="userInput" placeholder="Ask Questions!"></textarea>
+      <button class="send-button" id="sendButton">↥</button>
+
+  <div class="History">
+    
+    <h2>History</h2>
+    </div>
+    <div class="today">
+      <p>Today---
+      </p>
+      <p class="icon-text">Where is Agra? 
+        <i class="fas fa-trash-alt trash-icon"></i>
+   </p>
+    </div>
+ 
+
+  <div class="separator"></div>
+</div>
+<div>
+  <div class='response'>
+    Agra is a city on the banks of the Yamuna river in the Indian state of Uttar Pradesh, about 230 kilometres south-east of the national capital Delhi and 330 km west of the state capital Lucknow.
+    </div>
+    <div class="responsetwo">
+      Agra is a city on the banks of the Yamuna river in the Indian state of Uttar Pradesh, about 230 kilometres south-east of the national capital Delhi and 330 km west of the state capital Lucknow.
+      </div>
+      <div class="responsethree">
+        Agra is a city on the banks of the Yamuna river in the Indian state of Uttar Pradesh, about 230 kilometres south-east of the national capital Delhi and 330 km west of the state capital Lucknow.
+       
+
+  </div>
+</div>
+  <script>
+const textarea = document.getElementById('userInput');
+
+// Add event listener to detect when typing starts
+textarea.addEventListener('input', () => {
+    // Add or remove 'active' class based on whether the textarea is empty or not
+    if (textarea.value.trim() !== '') {
+        textarea.parentNode.classList.add('active');
+    } else {
+        textarea.parentNode.classList.remove('active');
+    }
+});
+
+
+  </script>
+  </body>

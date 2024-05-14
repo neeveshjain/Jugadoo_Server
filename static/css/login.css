@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+* {
+
+
+    font-family: 'Nunito'; /* Set font family */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Nunito;
+    background-image: url("../images/footer_background.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    top: 1%;
+    left: 1%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.heading {
+    font-size: 24px;
+    padding-bottom: 4%;
+
+}
+
+.input-email{
+    margin-bottom: 10px;
+    border-radius: 25px;
+    width: 150%;
+    line-height: 2.5;
+    border: 2.5px solid #FF9900;
+    background-image: url("../images/email.png");
+    background-position: 20px center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-email:focus , .input-password:focus{
+    outline: none;
+}
+
+.input-wrapper{
+    position: relative;
+    /* width: 250px; */
+}
+.input-password {
+    margin-bottom: 10px;
+    border-radius: 25px;
+    width: 150%;
+    line-height: 2.5;
+    border: 2.5px solid #FF9900;
+    background-image: url("../images/password.png");
+    background-position: 20px center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye-button {
+    background-image: url("../images/eye.png");
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 45%;
+    right: -65px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: 0px;
+}
+
+.eye-button:hover {
+    outline: none;
+    cursor: pointer;
+}
+
+.forgot-password {
+    margin-bottom: 10px;
+    padding-left: 23%;
+    font-size: 13px;
+    padding-bottom: 2%;
+    color: #0037F9;
+}
+
+.login-button {
+    margin-bottom: 10px;
+    background-color: #29218A;
+    border-radius: 25px;
+    height: 40px;
+    width: 125px;
+    font-size: 20px;
+    color: white;
+    font-weight: 400px;
+    border: 0px;
+    font-weight: 550;
+}
+.login-button:hover {
+    cursor: pointer;
+    background-color: #1A0D5D;
+}
+.or-text {
+    margin-bottom: 10px;
+    padding-bottom: 2%;
+    font-size: 19px;
+}
+
+.google-button {
+    margin-bottom: 10px;
+    background-size: auto 65%;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    height: 40px;
+    width: 275px;
+    border: 3px solid #FFE500;
+    font-size: 15px;
+    background-color: white;
+    background-image: url("../images/google.png");
+    background-position: 25px center;
+    padding-left: 30px;
+}
+
+.google-button:hover {
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);
+}
+
+.register-link {
+    margin-bottom: 10px;
+}

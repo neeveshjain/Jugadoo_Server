@@ -1,0 +1,355 @@
+*{
+  margin: 0%;
+}
+body {
+    font-family: Nunito;
+    background-image: url('../images/footer_background.png');
+}
+.main-content {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 80%;
+    padding-bottom: 5%;
+}
+form{
+  width:100%;
+  height:100;
+}
+
+body {
+    font-family: Nunito;
+}
+.container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 15%;
+}
+
+.ai_image{
+    width: 100%;
+    height: 100%;
+    /* background-image: url(../assets/images/ai_image.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.search-box{
+    width:75%;
+    border-radius: 25px;
+    line-height: 3;
+    padding-left: 50px;
+    border: 3px solid #FF9900;
+    background-image: url("../images/search.png");
+    background-size: 30px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+}
+
+.search-box::placeholder{
+    color: #000000;
+    font-size: 15px;
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    font-size: 30px;
+    font-weight: 1200;
+    color: #29218A;
+}
+
+.text-container{
+    margin-top: 2%;
+    margin-left: 17%;
+    margin-right: 15%;
+}
+
+.text-image1{
+    width: 60%;
+    height: auto;
+    margin-top: 5%;
+}
+
+.text-image2{
+    margin-top: 5%;
+    width: 60%;
+    height: auto;
+    padding-left: 35%;
+}
+
+
+@media screen and (min-width: 600px) {
+    .logo {
+        width: 175px;
+        height: 150.2px;
+    }
+}
+.logo{
+    width: 30%;
+    height: auto;
+    mix-blend-mode: darken;
+    padding-left: 7%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+footer {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 38.19px;
+    text-align: left;
+}
+footer a {
+    color: black;
+}
+
+
+.link-columns > div:first-child {
+    margin-left: 10%;
+}
+.link-columns > div:last-child {
+    margin-left: 150px !important;
+    margin-right: 0;
+}
+.footer{
+    padding-top: 2%;
+    display: flex; 
+    align-items: center;
+    margin-right: 0;
+    background-image: url('../images/image.png');
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 2%;
+}
+
+
+.link-columns {
+    display: flex;
+    justify-content: space-between;
+}
+.subscribe input[type="email"] {
+    width: 150%;
+    line-height: 2.5;
+    padding: 10px;
+    outline: none;
+    margin-top: 0;
+    border: 3px solid #FF9900;
+    border-radius: 13px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 5px #888888;
+}
+
+
+button[type="submit"] {
+    background-color:white;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 11px;
+    border: 0;
+    padding: 10px 20px;
+    font-weight: 549;
+    font-size: medium;
+    position: absolute;
+    right: 90px;
+    transform: translate();
+    width: auto;
+    right: 80px;
+top: 215%;
+    font-size: 15px;
+    /* border: 1px solid #FF9900; */
+    font-weight: 500;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffae34;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="email"]::placeholder {
+    color: #b8b3b3; 
+    font-size: 1em; 
+    text-align: left !important;
+    padding-left: 3%;
+}
+.link-columns > div {
+    display: flex;
+    flex-direction: column;
+}
+.link-columns > div:last-child {
+    margin-left: 400px;
+}
+
+.PoweredBy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px; */
+    background-color: #FEF6C8;
+    height: 50px;
+}
+
+.subtext {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.right {
+    margin-left: 25%;
+}
+.profile-link {
+    margin-left: 5px; /* Add some spacing between the last link and the profile image */
+    display: flex; /* Align items in a row */
+    align-items: center; /* Align vertically */
+}
+
+.profile-link img {
+    height: 30px; /* Adjust the height of the profile image */
+    margin-left: 5px; /* Add some spacing between the profile image and the link text */
+}
+nav ul{
+    list-style: none;
+    padding:0;
+    background:transparent;
+  
+  
+  }
+  .nav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  nav ul li a{
+    color:black;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    line-height: 1;
+  
+  }
+  nav ul li{
+    border-bottom: 1px dotted #ddd;
+  
+  }
+  /*styling logo*/
+  
+  nav div:first-child{
+    background:transparent;
+  
+  
+  }
+  nav div:first-child h1{
+  
+    line-height: 0;
+    padding: .8rem 0rem;
+    text-align: center;
+  
+  }
+  
+  nav div:first-child h1, nav ul{
+    margin:0;
+  
+  
+  }
+  
+  /* Existing CSS */
+  
+  /* Styling for larger devices */
+  @media only screen and (min-width: 30em){
+    nav{
+      margin:0;
+      display: flex;
+      justify-content: space-between;
+      background:transparent;
+      align-items: center;
+    }
+    
+    nav ul{
+      margin:0;
+      display: flex;
+      align-items: center;
+      background:none;
+      flex-wrap: wrap;
+    }
+    nav div:first-child h1 {
+      padding: 0;
+    }
+    
+    nav div:first-child img {
+      margin: 0%;
+      height: 130px; /* Set the height of the logo */
+      width: 40x; /* Set the width of the logo */
+    }
+    
+    nav ul li{
+      border-bottom:none;
+      flex: 1 0 auto;
+      position: relative;
+      margin-top: 0px;
+    }
+    nav ul li a{
+      padding:1.2rem 1rem;
+    }
+    nav ul li a::before, nav ul li a::after{
+      content: "";
+      position: absolute;
+      bottom:0;
+      right: 0;
+      width:0%;
+      height: 2px;
+      background:orange;
+      transition: .2s width ease-in-out;
+    }
+    
+    nav ul li a::before{
+      left:0;
+    }
+    
+    nav ul li a:hover::after,nav ul li a:hover::before{
+      width: 50%;
+    } 
+  }
+  
+  /* New CSS for smaller devices */
+  @media only screen and (max-width: 30em){
+    nav {
+      display: block;
+      text-align: center;
+    }
+    
+    nav ul {
+      display: block;
+    }
+    
+    nav ul li {
+      border-bottom: 1px dotted #ddd;
+      margin-top: 0.5rem;
+    }
+    
+    nav ul li:last-child {
+      border-bottom: none;
+    }
+    
+    nav ul li a {
+      display: block;
+      padding: 1rem;
+    }
+  }
+  
+ 
