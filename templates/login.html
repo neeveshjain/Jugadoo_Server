@@ -4,7 +4,6 @@
 <head>
     <title>Login Page</title>
     <link rel="stylesheet" href="../static/css/login.css">
-  
     <script src="../static/js/login.js"></script>
 </head>
 
@@ -13,29 +12,51 @@
     <div class="container">
         <h1 class="heading">LOGIN TO YOUR ACCOUNT</h1>
 
-        <div>
-            <input class="input-email" type="text" placeholder="Enter email">
-        </div>
-        
-        <div class="input-wrapper">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <div>
+                <input class="input-email" type="text" name="email" placeholder="Enter email" required>
+            </div>
             
-            <input  class="input-password"
-            id="password-field" type="password" placeholder="Enter password">
+            <div class="input-wrapper">
+                <input class="input-password" id="password-field" type="password" name="password" placeholder="Enter password" required>
+                <button type="button" id="eye-button" class="eye-button" onclick="togglePasswordVisibility()">Show</button>
+            </div>
 
-            <button id="eye-button" class="eye-button"></button>
-        </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
 
-        <a href="#" class="forgot-password">Forgot password?</a>
-
-        <button class="login-button">LOGIN</button>
+            <button type="submit" class="login-button">LOGIN</button>
+        </form>
 
         <p class="or-text">OR</p>
 
         <button class="google-button">LOG IN WITH GOOGLE</button>
 
-        <p class="register-link">New user? <a href="../login/registration.html" style="color: #0037F9;">Register</a></p>
-        
+        <p class="register-link">New user? <a href="{{ url_for('register') }}" style="color: #0037F9;">Register</a></p>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password-field');
+            var eyeButton = document.getElementById('eye-button');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeButton.textContent = 'Hide';
+            } else {
+                passwordField.type = 'password';
+                eyeButton.textContent = 'Show';
+            }
+        }
+    </script>
 </body>
 
 </html>
