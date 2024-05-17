@@ -127,6 +127,12 @@ body {
     font-size: 18px;
 }
 
+.register-button:hover {
+    background-color: #958bff;
+    color: white;
+    cursor: pointer;
+}
+
 .login-text{
     padding-top: 2%;
 }
