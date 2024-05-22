@@ -20,7 +20,7 @@ def register():
             hashed_password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
             mongo.db.users.insert_one({'name' : request.form['name'], 'email' : request.form['email'], 'password' : hashed_password})
             flash('Registration Successful!')
-            # return redirect(url_for('index'))
+            return redirect(url_for('index'))
         flash('User already exists!')
     return render_template('register.html')
 

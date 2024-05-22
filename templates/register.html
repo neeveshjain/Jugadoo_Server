@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../static/css/login.css">
-    <script src="../static/js/login.js"></script>
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="../static/css/registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <img src="../static/images/logo.png" alt="Logo" class="logo">
-    <div class="container">
-        <h1 class="heading">LOGIN TO YOUR ACCOUNT</h1>
-
-        {% with messages = get_flashed_messages() %}
+    
+    {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul>
+            <ul class=flashes>
                 {% for message in messages %}
                     <li>{{ message }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
-        {% endwith %}
+    {% endwith %}
+    <img class="logo" src="../static/images/logo.png" alt="Logo">
+    <h2 class="heading-text">REGISTER TO YOUR ACCOUNT</h2>
+    <form id="registrationForm" method="POST" action="{{ url_for('register') }}">
+        <div class="input-container">
+            <input class="name" type="text" name="name" id="name" placeholder="Enter Name">
+            <span id="nameError"></span>
+        </div>
+        <div class="input-container">
+            <input class="email" type="email" name="email" id="email" placeholder="Enter E-mail">
+            <span id="emailError"></span>
+        </div>
+        <div class="input-container">
+            <input class="password" type="password" name="password" id="password" placeholder="Enter Password">
+            <img src="../static/images/open-eye.png" class="eye" onclick="togglePasswordVisibility()">
+            <span id="passwordError"></span>
+        </div>
+        <button type="submit" class="register-button">REGISTER</button>
+    </form>
+    <p class="login-text">Already have an account? <a href="login.html">Login</a></p>
 
-        <form method="POST" action="{{ url_for('login') }}">
-            <div>
-                <input class="input-email" type="text" name="email" placeholder="Enter email" required>
-            </div>
-            
-            <div class="input-wrapper">
-                <input class="input-password" id="password-field" type="password" name="password" placeholder="Enter password" required>
-                <button type="button" id="eye-button" class="eye-button" onclick="togglePasswordVisibility()">Show</button>
-            </div>
-
-            <a href="#" class="forgot-password">Forgot password?</a>
-
-            <button type="submit" class="login-button">LOGIN</button>
-        </form>
-
-        <p class="or-text">OR</p>
-
-        <button class="google-button">LOG IN WITH GOOGLE</button>
-
-        <p class="register-link">New user? <a href="{{ url_for('register') }}" style="color: #0037F9;">Register</a></p>
-    </div>
-
+    <!-- JavaScript code -->
     <script>
         function togglePasswordVisibility() {
-            var passwordField = document.getElementById('password-field');
-            var eyeButton = document.getElementById('eye-button');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                eyeButton.textContent = 'Hide';
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
             } else {
-                passwordField.type = 'password';
-                eyeButton.textContent = 'Show';
+                passwordInput.type = 'password';
             }
         }
+
+        function validateForm(event) {
+            var nameField = document.getElementById('name');
+            var emailField = document.getElementById('email');
+            var passwordField = document.getElementById('password');
+            var nameError = document.getElementById('nameError');
+            var emailError = document.getElementById('emailError');
+            var passwordError = document.getElementById('passwordError');
+            var valid = true;
+
+            nameError.innerHTML = '';
+            emailError.innerHTML = '';
+            passwordError.innerHTML = '';
+
+            if (nameField.value.trim() === '') {
+                nameError.innerHTML = 'Name is required';
+                valid = false;
+            }
+            if (emailField.value.trim() === '') {
+                emailError.innerHTML = 'Email is required';
+                valid = false;
+            } else if (!isValidEmail(emailField.value.trim())) {
+                emailError.innerHTML = 'Invalid email address';
+                valid = false;
+            }
+            if (passwordField.value.trim() === '') {
+                passwordError.innerHTML = 'Password is required';
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        }
+
+        function isValidEmail(email) {
+            // You can add your email validation logic here
+            // For simplicity, let's assume any email is valid
+            return true;
+        }
+
+        window.onload = function() {
+            var registrationForm = document.getElementById('registrationForm');
+            registrationForm.onsubmit = validateForm;
+        };
     </script>
 </body>
-
 </html>
