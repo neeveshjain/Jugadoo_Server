@@ -184,7 +184,7 @@ footer a {
   display: flex; 
   align-items: center;
   margin-right: 0;
-  background-image: url('/assets/images/footer_background.png');
+  background-image: url('../images/footer_background.png');
   background-position: 90% 90%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -412,7 +412,7 @@ nav div:first-child h1, nav ul{
 
 /* ___________________About page_________________________ */
 body {
-  background-image: url('../assets/images/footer_background.png');
+  background-image: url('../images/footer_background.png');
     /* Adjust background image properties as needed */
     background-size: cover;
     background-position: center;

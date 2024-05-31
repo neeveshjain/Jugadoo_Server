@@ -20,7 +20,7 @@ def register():
             hashed_password = generate_password_hash(request.form['password'], method='pbkdf2:sha256')
             mongo.db.users.insert_one({'name' : request.form['name'], 'email' : request.form['email'], 'password' : hashed_password})
             flash('Registration Successful!')
-            return redirect(url_for('index'))
+            return redirect(url_for('index'))     
         flash('User already exists!')
     return render_template('register.html')
 
@@ -36,6 +36,19 @@ def login():
 
         flash('Invalid username/password combination')
     return render_template('login.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/pricing')
+def pricing():
+    return render_template('pricing.html')
+
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
