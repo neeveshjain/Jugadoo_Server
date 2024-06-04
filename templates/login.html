@@ -32,7 +32,7 @@
                 <button type="button" id="eye-button" class="eye-button" onclick="togglePasswordVisibility()">Show</button>
             </div>
 
-            <a href="#" class="forgot-password">Forgot password?</a>
+            <a href="{{ url_for('forgot_password') }}" class="forgot-password">Forgot password?</a>
 
             <button type="submit" class="login-button">LOGIN</button>
         </form>
