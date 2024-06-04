@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+flask
+flask_pymongo
+werkzeug
+flask_mail
+itsdangerous
