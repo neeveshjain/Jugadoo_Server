@@ -7,8 +7,8 @@ from flask import Flask, render_template, request, jsonify
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-tokenizer = AutoTokenizer.from_pretrained("gpt2")
-model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-2.7B")
+model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-neo-2.7B")
 
 app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.your-email.com'
@@ -82,10 +82,8 @@ def forgot_password():
             mail.send(msg)
             flash('Password reset email sent!', 'info')
         else:
-            flash('Email not found!', 'danger')
-        
+            flash('Email not found!', 'danger')  
         return redirect(url_for('login'))
-    
     return render_template('forgot_password.html')
 
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
@@ -112,16 +110,14 @@ def chat():
 @app.route("/chat/get", methods=["GET", "POST"])
 def chatting():
     msg = request.form["msg"]
-    return get_Chat_response(msg)
+    return get_chat_response(msg)
 
 
-def get_Chat_response(text):
-    chat_history_ids = None
-    for step in range(5):
-        new_user_input_ids = tokenizer.encode(str(text) + tokenizer.eos_token, return_tensors='pt')
-        bot_input_ids = torch.cat([chat_history_ids, new_user_input_ids], dim=-1) if step > 0 else new_user_input_ids
-        chat_history_ids = model.generate(bot_input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id)
-        return tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
+def get_chat_response(text):
+    inputs = tokenizer.encode(text, return_tensors="pt")
+    outputs = model.generate(inputs, max_length=1024, pad_token_id=tokenizer.eos_token_id)
+    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
