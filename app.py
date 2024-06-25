@@ -7,8 +7,8 @@ from flask import Flask, render_template, request, jsonify
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-2.7B")
-model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-neo-2.7B")
+tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 
 app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.your-email.com'
